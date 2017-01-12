@@ -34,12 +34,10 @@ bool Module::configure (yarp::os::ResourceFinder &rf)
     using namespace yarp::sig;
     
     Property wbiProperties;
-    if (!rf.check("wbi_config_file", "Checking wbi configuration file")) {
-        std::cout << "No WBI configuration file found.\n";
-        return false;
-    }
 
-    if (!wbiProperties.fromConfigFile(rf.findFile("wbi_config_file"))) {
+    std::string wbiConfFile = rf.check("wbi_config_file", Value("yarpWholeBodyInterface.ini"), "Checking wbi configuration file").asString();
+
+    if (!wbiProperties.fromConfigFile(rf.findFile(wbiConfFile))) {
         std::cout << "Not possible to load WBI properties from file.\n";
         return false;
     }
@@ -57,7 +55,7 @@ bool Module::configure (yarp::os::ResourceFinder &rf)
     double actuatedDOFs = iCubMainJoints.size();
 
     //create an instance of wbi
-    m_robot = new yarpWbi::yarpWholeBodyInterface("wbi_example_cpp", wbiProperties);
+    m_robot = new yarpWbi::yarpWholeBodyInterface("impedance_control", wbiProperties);
     if (!m_robot) {
         std::cout << "Could not create wbi object.\n";
         return false;
