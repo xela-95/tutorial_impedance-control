@@ -52,7 +52,7 @@ bool Module::configure (yarp::os::ResourceFinder &rf)
         return false;
     }
 
-    double actuatedDOFs = iCubMainJoints.size();
+    unsigned actuatedDOFs = iCubMainJoints.size();
 
     //create an instance of wbi
     m_robot = new yarpWbi::yarpWholeBodyInterface("impedance_control", wbiProperties);
