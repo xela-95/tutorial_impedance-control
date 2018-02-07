@@ -79,7 +79,7 @@ bool Module::updateModule ()
     
     kinDynModel.setRobotState(w_H_b, jointPos, baseVel, jointVelSetToZero, gravity);
     
-    // The compute computeGeneralizedGravityForces function is computing the g(q) term, for both the base and the joint 
+    // The computeGeneralizedGravityForces method is computing the g(q) term, for both the base and the joint 
     iDynTree::FreeFloatingGeneralizedTorques g_q(kinDynModel.model());
     kinDynModel.generalizedGravityForces(g_q);
     
