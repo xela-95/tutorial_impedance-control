@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8.12)
 
-project(tutorial_impedance_control)
+project(tutorial_impedance-control)
 
 find_package(YARP REQUIRED)
 find_package(ICUBcontrib REQUIRED)
