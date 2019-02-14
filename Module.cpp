@@ -87,7 +87,7 @@ bool Module::updateModule ()
     iDynTree::toYarp(g_q.jointTorques(), gravityCompensation);
 
     //compute control
-    for (int i = 0; i < positionsInRad.size(); i++) {
+    for (size_t i = 0; i < positionsInRad.size(); i++) {
         errorInRad(i) = referencePositionsInRad(i) - positionsInRad(i);
         torquesInNm(i) = gravityCompensation(i) + kp(i) * errorInRad(i) - kd(i) * velocitiesInRadS(i);
     }
@@ -164,7 +164,7 @@ bool Module::configure (yarp::os::ResourceFinder &rf)
     Property & remoteControlBoardsOpts = options.addGroup("REMOTE_CONTROLBOARD_OPTIONS");
     remoteControlBoardsOpts.put("writeStrict","on");
 
-    unsigned actuatedDOFs = axesList.size();
+    size_t actuatedDOFs = axesList.size();
 
     // Actually open the device
     bool ok = robotDevice.open(options);
@@ -242,8 +242,6 @@ bool Module::configure (yarp::os::ResourceFinder &rf)
     }
 
     convertDegToRad(positionsInDeg, referencePositionsInRad);
-
-    int index = -1;
 
     iDynTree::IJointConstPtr joint = model.getJoint(model.getJointIndex("l_shoulder_pitch"));
     if (!joint) {

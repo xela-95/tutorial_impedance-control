@@ -10,7 +10,7 @@ int main(int argc, char **argv)
 
     if (!yarp::os::Network::checkNetwork(5.0)) {
         std::cout << "Yarp network not found\n";
-        return false;
+        return 1;
     }
 
     ResourceFinder rf = ResourceFinder::getResourceFinderSingleton();
