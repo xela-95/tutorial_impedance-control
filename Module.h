@@ -4,9 +4,6 @@
 #include <yarp/os/RFModule.h>
 #include <yarp/sig/Vector.h>
 
-// Workaround for https://github.com/robotology/yarp/issues/1844
-#include <yarp/os/Vocab.h>
-
 #include <yarp/dev/IControlLimits.h>
 #include <yarp/dev/IEncoders.h>
 #include <yarp/dev/IControlMode.h>
