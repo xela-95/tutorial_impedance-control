@@ -13,7 +13,7 @@
 
   <module>
       <name>tutorial_impedance-control</name>
-      <environment>YARP_FORWARD_LOG_ENABLE=1;YARP_CLOCK=/clock;YARP_ROBOT_NAME=iCubGazeboV2_5</environment>
+      <environment>YARP_FORWARD_LOG_ENABLE=1;YARP_CLOCK=/clock;YARP_ROBOT_NAME=icubGazeboSim</environment>
       <node>localhost</node>
   </module>
 
