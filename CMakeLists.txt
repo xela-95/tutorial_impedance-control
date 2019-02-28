@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.5)
 
 project(tutorial_impedance-control)
 
-find_package(YARP 3.0 REQUIRED)
+find_package(YARP 3.1 REQUIRED)
 find_package(ICUBcontrib REQUIRED)
 find_package(iDynTree REQUIRED)
 
@@ -32,4 +32,8 @@ icubcontrib_add_uninstall_target()
 
 
 file(GLOB scripts ${CMAKE_SOURCE_DIR}/app/scripts/*.xml)
+file(GLOB urdf ${CMAKE_CURRENT_SOURCE_DIR}/app/robots/icubGazeboSim/model.urdf)
+
 yarp_install(FILES ${scripts} DESTINATION ${ICUBCONTRIB_APPLICATIONS_INSTALL_DIR})
+yarp_install(FILES ${urdf} DESTINATION ${ICUBCONTRIB_ROBOTS_INSTALL_DIR}/icubGazeboSim)
+
