@@ -4,6 +4,7 @@
 
 #include <yarp/os/ResourceFinder.h>
 #include <yarp/os/Property.h>
+#include <yarp/os/LogStream.h>
 #include <yarp/sig/Vector.h>
 
 // iDynTree headers
