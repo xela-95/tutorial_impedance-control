@@ -10,7 +10,7 @@
 
   <module>
       <name>gzserver</name>
-      <parameters>-slibgazebo_yarp_clock.so icub_simple_fixed_world/icub_simple_fixed.world</parameters>
+      <parameters>-slibgazebo_yarp_clock.so tutorial_impedance_world.world</parameters>
       <node>localhost</node>
   </module>
 

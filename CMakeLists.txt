@@ -30,9 +30,11 @@ install(TARGETS ${PROJECT_NAME} DESTINATION bin)
 icubcontrib_add_uninstall_target()
 
 
-file(GLOB scripts ${CMAKE_SOURCE_DIR}/app/scripts/*.xml)
-file(GLOB urdf ${CMAKE_CURRENT_SOURCE_DIR}/app/robots/icubGazeboSim/model.urdf)
+file(GLOB scripts ${CMAKE_CURRENT_SOURCE_DIR}/app/scripts/*.xml)
+file(GLOB world ${CMAKE_CURRENT_SOURCE_DIR}/app/worlds/tutorial_impedance_world.world)
 
 yarp_install(FILES ${scripts} DESTINATION ${ICUBCONTRIB_APPLICATIONS_INSTALL_DIR})
-yarp_install(FILES ${urdf} DESTINATION ${ICUBCONTRIB_ROBOTS_INSTALL_DIR}/icubGazeboSim)
+yarp_install(FILES ${world} DESTINATION share/gazebo/worlds)
+
+# yarp_install(FILES ${world} DESTINATION ${ICUBCONTRIB_INSTALL_DIR}/worlds) ?
 
