@@ -1,0 +1,25 @@
+
+<!-- SPDX-FileCopyrightText: Fondazione Istituto Italiano di Tecnologia (IIT) -->
+<!-- SPDX-License-Identifier: BSD-3-Clause -->
+
+<?xml version="1.0"?>
+<sdf version="1.7">
+  <world name="default">
+
+    <!-- Light -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- Ground Plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <!-- iCub -->
+    <include>
+        <uri>model://iCubGazeboV2_5_fixed</uri>
+    </include>
+   
+  </world>
+</sdf>
